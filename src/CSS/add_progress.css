@@ -1,0 +1,300 @@
+/* //////////////////////////////////////// ADD PROGRESS PAGE CSS FILE STARTS HERE //////////////////////////////////////// */
+
+.addProgressWrapper{
+    width: 100%; min-height: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(6,auto);
+    grid-template-rows: repeat(9,auto) 250px;
+    /*grid-gap: 1px;*/
+}
+
+.itemFirstCol{
+    grid-template-columns: 100px;
+}
+
+*{ box-sizing: border-box; margin: 0; padding: 0; }
+body{ background: #8A94B9; min-height: 100%; }
+a{ text-decoration: none; }
+
+.item{
+    background: white;
+    color: black;
+    padding: 15px;
+    text-align: center;
+    font-family: Tw Cen Mt;
+}
+
+.titleDiv{ grid-column: span 2; text-align:right;}
+.contentDiv{ grid-column: span 4; text-align:left;}
+.bottomRow{
+    grid-column: span 6;
+    text-align:left;
+    height: 300px;
+}
+
+#navBarLeft, #navBarRight { grid-column: span 1; }
+#navBarLeft{ padding-left: 15px; text-align: left; }
+#navBarRight{ padding-right: 15px; text-align: right; }
+#navBarMid{ grid-column: span 4; text-align: center; }
+
+#profileIcon{ opacity: .6; width: 40px; height: 40px; }
+#profileIcon:hover{ opacity: .9; }
+
+#home{
+    color: #8A94B9;
+    font-family: Calibri;
+    font-weight: 600;
+    font-size: 35px;
+}
+
+#home:hover{ color: #3C2D50; }
+
+#navBarLeft, #navBarRight, #navBarMid {
+    background: #C6C0CA;
+    opacity: .9;
+    padding-top:8px;
+    padding-bottom:8px;
+}
+
+.innerGoalTitle {
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.innerGoalSection {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.sectionTitle{
+    font-family: Courier;
+    font-size: 16px;
+    color: #474444;
+}
+
+.firstRow{
+    padding-top: 40px;
+    /*padding:right: 200px; */
+}
+
+.goalTypeIcon{
+    height: 30px;
+    width:auto;
+    fill:black;
+    opacity: .3;
+}
+
+.previousInput{
+    padding-left: 10px; padding-right: 10px;
+    padding-top: 5px; padding-bottom: 5px;
+    text-indent: 2px;
+    display: inline;
+    border-radius: 12px;
+    border-top-right-radius: 6px;
+    background: #8A94B9;
+}
+
+.buttonSection{ padding-top:20px; text-align:right; }
+.iconSection{ padding-top:20px; text-align:left; }
+
+.innerSectionTitleDiv{
+    text-align:right;
+}
+
+#incentiveDescription{
+    display: inline-block;
+    /*text-indent: 100px;*/
+}
+
+.userInput{
+    display:inline;
+}
+
+.exerciseInput{
+    font-family: Courier;
+    font-size: 16px;
+    display: inline;
+    width: auto;
+    margin: 0px;
+    background: none;
+    text-align: left;
+    text-indent: 10px;
+    height: 26px;
+    border: 1px;
+    border-radius: 12px;
+    border-top-right-radius: 6px;
+    background: #C6C0CA;
+}
+
+.notesInput{
+    font-family: Courier;
+    font-size: 12px;
+    width: 330px;
+    height: 110px;
+    padding: 10px;
+    margin: 0px;
+    border-color: black;
+    background: none;
+    text-align: left;
+}
+
+.notesInput:focus{
+    outline: none;
+    border-color: #C6C0CA;
+}
+
+.exerciseInput:focus, .baselineInput:focus, .activityInput:focus{
+    outline: none;
+    /*background: #9A93B7;*/
+}
+
+.description{
+    /*text-align: left;*/
+    padding-right: 30px;
+    padding-left: 30px;
+    font-size: calc(7px + .6vw + .2vh);
+}
+
+.timeframe:hover{color:black;}
+
+.timeframe{
+    /*font-family: Tw Cen Mt;*/
+    font-family: Courier;
+    padding: 7px 13px;
+    border-radius: 9px; border-width: 1px; border-color: #C6C0CA;
+    font-size: 12px;
+    color: grey; background: #C6C0CA;
+}
+
+.submit:hover{
+    background: #8A94B9;
+    border-color: #8A94B9;
+    color: black;
+    cursor: pointer;
+}
+
+.submit{
+    font-family: Tw Cen Mt;
+    padding: 7px 13px;
+    border-radius: 9px; border-width: 1px; border-color: #615B5B;
+    font-size: 14px;
+    color: white; background: #474444;
+}
+
+.disallowed{
+    pointer-events:none;
+    background: #CECDD3;
+    border-color: #CECDD3;
+}
+
+.timeframe:focus{ outline: none; }
+.timeframe:hover{ cursor: pointer; }
+
+
+/* iPhone X DESIGN HERE */
+
+@media only screen
+and (min-device-width : 375px)
+and (max-device-width : 812px)
+and (-webkit-device-pixel-ratio : 3) {
+
+    /**/
+
+    .wrapper{
+        width: 100%; min-height: 100%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 400px repeat(4,1fr) 400px;
+        grid-template-rows: auto;
+        /*grid-gap: 3px;*/
+    }
+
+    .icon{ opacity: .3; width: 130px; height: 130px; }
+    .filledIcon{ opacity: 1; width: 150px; height: 150px; }
+
+    #home{
+        color: #8A94B9;
+        font-family: Calibri;
+        font-weight: 600;
+        font-size: 50px;
+    }
+
+    #profileIcon{ opacity: .6; width: 70px; height: 70px; }
+
+    .innerGoalSection {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .innerGoalTitle {
+        padding-top: 70px;
+        padding-bottom: 50px;
+        padding-right: 50px;
+        padding-left: 50px;
+    }
+
+    .preface, #incentiveAmount, #incentiveDollarSign{
+        font-family: TW Cen Mt;
+        font-size: 35pt;
+    }
+
+    .exerciseInput, .baselineInput, .activityInput{
+        font-family: Courier;
+        font-size: 27pt;
+        display: inline;
+        width: auto;
+        margin: 0px;
+        background: none;
+        text-align: left;
+        text-indent: 20px;
+        height: 50px;
+        border: 1px;
+        border-radius: 20px;
+        border-top-right-radius: 10px;
+        background: #C6C0CA;
+    }
+
+    .timeframe{
+        font-family: Courier;
+        padding: 12px 18px;
+        border-radius: 14px; border-width: 1px; border-color: #C6C0CA;
+        font-size: 22px;
+        color: grey; background: #C6C0CA;
+    }
+
+    .submit:hover{
+        background: #8A94B9;
+        border-color: #8A94B9;
+        color: black;
+        cursor: pointer;
+    }
+
+    .submit{
+    font-family: Tw Cen Mt;
+    padding: 7px 13px;
+    border-radius: 9px; border-width: 1px; border-color: #615B5B;
+    font-size: 20px; /* need to make submit button larger on mobile - not sure why this doesn't increase font size */
+    color: white; background: #474444;
+    }
+
+    .notesInput{
+        font-family: Courier;
+        font-size: 8px;
+        width: 500px;
+        height: 100px;
+        padding: 10px;
+        margin: 0px;
+        border-color: black;
+        background: none;
+        text-align: left;
+    }
+}
+
+.disallowed{
+    pointer-events:none;
+    background: #CECDD3;
+    border-color: #CECDD3;
+}
+
+/* //////////////////////////////////////// ADD PROGRESS PAGE CSS FILE ENDS HERE //////////////////////////////////////// */
