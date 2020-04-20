@@ -3,7 +3,7 @@ import { Fragment } from 'react';
 import commitmentIcon from '../images/commitment.svg';
 
 // STYLESHEETS
-// import '../CSS/master.css'; 
+import '../CSS/master.css'; 
 
 // BANNER
 import Banner from '../components/record-goal-components/_banner.js';
@@ -67,6 +67,7 @@ class Goal extends Component {
     return (
       <Fragment>
         <Banner/>
+        <div className = "wrapperRecordGoal">  
         <div className = "item item1">
             <div className = "innerGoalTitle">
                 <GoalIcon icon = {commitmentIcon} validGoal = {this.state.validCommitmentGoal}/>
@@ -93,6 +94,7 @@ class Goal extends Component {
             validGoal = {this.state.validCommitmentGoal}             
             timeframe = {this.state.goalTimeframe} 
           />
+          </div>
       </Fragment>
     );
   }

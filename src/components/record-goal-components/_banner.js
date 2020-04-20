@@ -1,8 +1,9 @@
 
 import React, { Component } from 'react';
 import { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import homeIcon from '../../images/person_head.svg';
-import '../../CSS/record_goal.css';
+import '../../CSS/master.css';
 
 class Banner extends Component {
 
@@ -14,18 +15,19 @@ class Banner extends Component {
   render() {
     return (   
       <Fragment>
-          <div className = "item banner" id = "navBarLeft">
-            <a href= "file:home.html"> 
-              <span id = "home"> 
-                sweatbank 
-              </span> 
-            </a>
-          </div>
-
-          <div className = "item banner" id = "navBarMid"/>
-
-          <div className = "item banner" id = "navBarRight">
-            <a  href= "file:sweatbank_profile.html"> <img src= {homeIcon} id= "profileIcon"/> </a>
+          <div className = "navBarWrapper">
+            <div className = "navBarLeft">
+              <Link to = "/"> 
+                <span id ="home"> sweatbank </span> 
+              </Link> 
+            </div>
+          
+            <div 
+              className = "navBarRight">
+              <Link to = "/profile"> 
+                <img src= {homeIcon} id= "profileIcon"/> 
+              </Link> 
+            </div>
           </div>
       </Fragment>
     );

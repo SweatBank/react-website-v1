@@ -1,30 +1,38 @@
 /* //////////////////////////////////////// COMMON CLASSES //////////////////////////////////////// */
 
-.disallowed{
-    pointer-events:none;
-    background: #CECDD3;
-    border-color: #CECDD3;
-}
+*{ box-sizing: border-box; margin: 0; padding: 0; }
+body{ background: #8A94B9; min-height: 100%; }
 
 a{ text-decoration: none; }
 
-#navBarLeft, #navBarRight, #navBarMid {
+/* a:link{
+    color: #8A94B9
+} */
+
+.navBarWrapper{
+    width: 100%; min-height: 100%; margin: 0 auto; display: grid; /* common properties */
+    grid-template-columns: repeat(2,1fr); grid-template-rows: auto;
+}
+
+.navBarLeft, .navBarRight{
     background: #C6C0CA;
     opacity: .9;
     padding-top:8px;
     padding-bottom:8px;
 }
 
-#navBarLeft{ padding-left: 15px; text-align: left; }
-#navBarRight{ padding-right: 15px; text-align: right; }
+.navBarLeft{ padding-left: 15px; text-align: left; }
+.navBarRight{ padding-right: 15px; text-align: right; }
 
-#home{
-    color: #8A94B9;
-    font-family: Calibri;
-    font-weight: 600;
-    font-size: 35px;
-}
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+  }
+
+#home{ color: #8A94B9; font-family: Calibri; font-weight: 600; font-size: 35px; }
 #home:hover{ color: #3C2D50; }
+
 #profileIcon{ opacity: .6; width: 40px; height: 40px; }
 #profileIcon:hover{ opacity: .9; }
 
@@ -33,16 +41,6 @@ a{ text-decoration: none; }
     padding: 15px;
     font-family: Tw Cen Mt; color: black; text-align: center; 
 }
-
-.wrapper{
-    width: 100%; min-height: 100%;
-    margin: 0 auto;
-    display: grid;
-    grid-gap: 1px;
-}
-
-*{ box-sizing: border-box; margin: 0; padding: 0; }
-body{ background: #8A94B9; min-height: 100%; }
 
 .navButton{
     font-family: Tw Cen Mt;
@@ -58,12 +56,23 @@ body{ background: #8A94B9; min-height: 100%; }
 
 .navButton:hover{ background-position: 0 -100%;}
 
+.disallowed{
+    pointer-events:none;
+    background: #CECDD3;
+    border-color: #CECDD3;
+}
+
 /* //////////////////////////////////////// HOME PAGE CSS FILE STARTS HERE //////////////////////////////////////// */
 
 .wrapper-home{
+    width: 100%; min-height: 100%; margin: 0 auto; display: grid; /* common properties */
+    /* grid-gap: 1px; */
     grid-template-columns: auto;
-    grid-template-rows: auto;
+    grid-template-rows: repeat(4,auto);
 }
+
+.titleDiv-home, .iconsDiv-home, .buttonsDiv-home{ grid-column: span 6;}
+/* not sure why I need to do this - should not be 6 grid columns */
 
 .title-home{
     font-family: Courier;
@@ -71,6 +80,7 @@ body{ background: #8A94B9; min-height: 100%; }
     font-weight: 500;
     font-size: 55px;
     padding-top: 70px;
+    grid-column: span 4;
 }
 
 svg{ height: 280px; width:auto; fill:#8A94B9;}
@@ -83,169 +93,102 @@ svg{ height: 280px; width:auto; fill:#8A94B9;}
     color: grey;
 }
 
-.infoButton:hover{ color: #474444; }
+.infoButton-home:hover{ color: #474444; }
 .buttons-home{padding-bottom: 180px; }
 
 /* //////////////////////////////////////// HOME PAGE CSS FILE ENDS HERE //////////////////////////////////////// */
-
 /* //////////////////////////////////////// ADD PROGRESS PAGE CSS FILE STARTS HERE //////////////////////////////////////// */
 
 .wrapper-addprogress{
-    grid-template-columns: repeat(6,auto);
+    width: 100%; min-height: 100%; margin: 0 auto; display: grid; /* common properties */
+    /* grid-gap: 1px; */
+    grid-template-columns: auto 200px auto auto;
     grid-template-rows: repeat(9,auto) 250px;
 }
 
-.firstRow-addprogress{ padding-top: 60px;}
-.titleDiv-addprogress{ grid-column: span 2; text-align:right;}
-.contentDiv-addprogress{ grid-column: span 4; text-align:left;}
-.bottomRow-addprogress{ grid-column: span 6; height: 300px;}
-.buttonSection-addprogress{ padding-top:20px; text-align:right; }
+.firstRow-addprogress{ padding-top: 20px;}
+/* .titleDiv-addprogress{ grid-column: span 3;} */
+/* .contentDiv-addprogress{ grid-column: span 3;} */
+.innerTitleDiv-addprogress{ text-align:left;}
+.innerContentDiv-addprogress{ text-align:left;}
+.bottomRow-addprogress{ grid-column: span 4; height: 300px;}
+.buttonSection-addprogress{ padding-top:40px; text-align:left; }
+.buttonDiv-addprogress{ grid-column: span 2; }
 .iconSection-addprogress{ padding-top:20px; text-align:left; }
-.innerTitleDiv-addprogress{ text-align:right; }
-.innerContentDiv-addprogress{ text-align:left; }
 
-/* #navBarMid{ grid-column: span 3; } */
+.headerDiv-addprogress{
+    padding-top: 50px;
+    padding-bottom: 25px;
+    text-align: left;
+    grid-column: span 2;
+    font-family: Courier;
+    font-weight: 500;
+    font-size: 28px;
+}
 
+.todayDiv-addprogress{ padding-top: 40px; }
+.baselineDiv-addprogress{padding-top:25px;}
 .title-addprogress{
     font-family: Courier;
-    font-size: 16px;
+    font-size: 17px;
     color: #474444;
 }
 
+.exerciseInput-addprogress{
+    font-family: Courier; font-size: 19px;
+    display: inline;
+    margin: 0px;
+    padding-top:0px;
+    background: none;
+    text-align: left;
+    text-indent: 12px;
+    height: 34px;
+    border: 1px;
+    border-radius: 12px; border-top-right-radius: 6px;
+    background: #C6C0CA;
+}
+
+.exerciseInput-addprogress:focus{
+    outline: none;
+}
+
+
+.headerIcon-addprogress{
+    height: 20px; width:auto;
+}
+
 .goalTypeIcon-addprogress{
-    height: 37px;
-    width:auto;
-    fill:black;
+    height: 37px; width:auto;
     opacity: .3;
 }
 
-.previousInput{
+.previousInput-addprogress{
     padding-left: 12px; padding-right: 10px;
-    padding-top: 5px; padding-bottom: 5px;
+    padding-top: 7px; padding-bottom: 7px;
     border-radius: 12px;
     border-top-right-radius: 6px;
     font-size: 18px;
-    /* border-top-left-radius: 7px;
-    border-bottom-left-radius: 18px; */
     background: #8A94B9;
 }
 
 .navButton-addprogress{ font-size: 16px; }
 
-
-/* iPhone X DESIGN HERE */
-
-@media only screen
-and (min-device-width : 375px)
-and (max-device-width : 812px)
-and (-webkit-device-pixel-ratio : 3) {
-
-    /**/
-
-    .wrapper{
-        width: 100%; min-height: 100%;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 400px repeat(4,1fr) 400px;
-        grid-template-rows: auto;
-        /*grid-gap: 3px;*/
-    }
-
-    .icon{ opacity: .3; width: 130px; height: 130px; }
-    .filledIcon{ opacity: 1; width: 150px; height: 150px; }
-
-    #home{
-        color: #8A94B9;
-        font-family: Calibri;
-        font-weight: 600;
-        font-size: 50px;
-    }
-
-    #profileIcon{ opacity: .6; width: 70px; height: 70px; }
-
-    .innerGoalSection {
-        padding-top: 50px;
-        padding-bottom: 50px;
-    }
-
-    .innerGoalTitle {
-        padding-top: 70px;
-        padding-bottom: 50px;
-        padding-right: 50px;
-        padding-left: 50px;
-    }
-
-    .preface, #incentiveAmount, #incentiveDollarSign{
-        font-family: TW Cen Mt;
-        font-size: 35pt;
-    }
-
-    .exerciseInput, .baselineInput, .activityInput{
-        font-family: Courier;
-        font-size: 27pt;
-        display: inline;
-        width: auto;
-        margin: 0px;
-        background: none;
-        text-align: left;
-        text-indent: 20px;
-        height: 50px;
-        border: 1px;
-        border-radius: 20px;
-        border-top-right-radius: 10px;
-        background: #C6C0CA;
-    }
-
-    .timeframe{
-        font-family: Courier;
-        padding: 12px 18px;
-        border-radius: 14px; border-width: 1px; border-color: #C6C0CA;
-        font-size: 22px;
-        color: grey; background: #C6C0CA;
-    }
-
-    .submit:hover{
-        background: #8A94B9;
-        border-color: #8A94B9;
-        color: black;
-        cursor: pointer;
-    }
-
-    .submit{
-    font-family: Tw Cen Mt;
-    padding: 7px 13px;
-    border-radius: 9px; border-width: 1px; border-color: #615B5B;
-    font-size: 20px; /* need to make submit button larger on mobile - not sure why this doesn't increase font size */
-    color: white; background: #474444;
-    }
-
-    .notesInput{
-        font-family: Courier;
-        font-size: 8px;
-        width: 500px;
-        height: 100px;
-        padding: 10px;
-        margin: 0px;
-        border-color: black;
-        background: none;
-        text-align: left;
-    }
-}
-
-
 /* //////////////////////////////////////// ADD PROGRESS PAGE CSS FILE ENDS HERE //////////////////////////////////////// */
-
-
 /* //////////////////////////////////////// HOW IT WORKS PAGE CSS FILE STARTS HERE //////////////////////////////////////// */
 
-
-.wrapper{
-    grid-template-columns: 1fr auto auto 1fr;
-    /*grid-template-columns: repeat(4, auto);*/
+.wrapper-howitworks{
+    width: 100%; min-height: 100%; margin: 0 auto; display: grid; /* common properties */
+    /* grid-gap: 1px; */
+    grid-template-columns: 1fr 200px auto 1fr;
     grid-template-rows: auto;
 }
 
-#navBarLeft, #navBarRight{ grid-column: span 2; }
+.item-howitworks{
+    background: white;
+    padding: 15px;
+    text-align: left;
+    font-family: Tw Cen Mt;
+}
 
 .bigNumber{ font-family: courier; font-size: 100px; }
 .buttonsSection{grid-column: span 2; padding-top: 50px;}
@@ -254,79 +197,43 @@ and (-webkit-device-pixel-ratio : 3) {
 .headerIcon{ width: 80px; height:auto; }
 .title{ font-family: Tw Cen Mt; font-size: 24px; }
 .firstRow{ padding-top: 50px; }
-.accent{
-    color: #8A94B9;
-    font-weight: 400;
-    text-decoration: underline;
+
+.accent{ 
+    color: #8A94B9; 
+    font-weight: 400; 
+    text-decoration: underline; 
 }
-
-.headerRow{
-    font-family: courier;
-    font-size: 35;
-    grid-column: span 2;
-}
-
-.button{
-    font-family: Tw Cen Mt;
-    padding: 7px 13px;
-    border-radius: 9px;
-    border-width: 1px;
-    font-size: 15px;
-    color: white;
-    /*background: #474444;*/
-    background-size: 100% 200%;
-    background-image: linear-gradient(to bottom, #474444 50%, #8A94B9 50%);
-    -webkit-transition: background-position .5s;
-    -moz-transition: background-position .5s;
-    transition: background-position .5s;
-}
-
-.button:hover{ background-position: 0 -100%;}
-
-.goToGoal:hover{
-    background: #8A94B9;
-    border-color: #8A94B9;
-    color: black;
-    cursor: pointer;
-}
-
-.goToGoal{
-    font-family: Tw Cen Mt;
-    padding: 7px 13px;
-    border-radius: 9px; border-width: 1px; border-color: #615B5B;
-    font-size: 18px;
-    color: white; background: #474444;
-}
-
-.bottomRow{grid-column: span 4; height: 250px;}
-
-
-/* iPhone X */
-@media only screen
-and (min-device-width : 375px)
-and (max-device-width : 812px)
-and (-webkit-device-pixel-ratio : 3) {
-
-    /* iPhone styling here*/
-
-}
+.headerRow{ font-family: courier; font-size: 35; grid-column: span 2; }
+.bottomRow-howitworks{grid-column: span 4; height: 250px;}
 
 /* //////////////////////////////////////// HOW IT WORKS PAGE CSS FILE ENDS HERE //////////////////////////////////////// */
-
-
 /* //////////////////////////////////////// MY GOALS PAGE CSS FILE STARTS HERE //////////////////////////////////////// */
 
 button:focus { outline: none; }
 
-.wrapper{
-    grid-template-columns: repeat(6,auto);
+.wrapper-mygoals{
+    width: 100%; min-height: 100%; margin: 0 auto; display: grid; /* common properties */
+    /* grid-gap: 1px; */
     grid-template-columns: auto 100px minmax(auto,150px) minmax(auto,150px) minmax(auto,150px) auto;
     grid-template-rows: auto;
     justify-items:bottom;
 }
 
+.itemMyGoals{
+    position: relative;
+    background: white;
+    color: black;
+    padding: 15px;
+    text-align: center;
+    font-family: Tw Cen Mt;
+    font-size: 17px;
+    align-items: end;
+}
 
-.contentDiv{
+.buttonDivMyGoals{ padding-top:37px; }
+.navButton-mygoals{ font-size: 15px; }
+
+.contentDiv-mygoals{
     position: relative;
     vertical-align: bottom;
     align-self: bottom;
@@ -336,27 +243,18 @@ button:focus { outline: none; }
     justify-content: center;
 }
 
-
-.internalContentDiv{
-    /*position:absolute;*/
-    /*padding: 15px;*/
-    /*bottom:0px;*/
-}
-
 .goalTypeIcon{ height: 45px; width:auto; }
 
 .firstCol{ padding-right: 15px; text-align:right;}
 .lastCol{ padding-left: 15px; text-align:left;}
 
-.headerDiv{
+.headerDiv-mygoals{
     padding-top: 40px;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
     font-family: Courier;
-    font-size: 16px;
+    font-size: 19px;
     color: #474444;
 }
-
-/*NEED TO ALIGN PROGRESS BAR TO CENTER OF DIV SOMEHOW*/
 
 .progressDiv{ text-align:center; }
 
@@ -377,122 +275,39 @@ button:focus { outline: none; }
     background: #8A94B9;
 }
 
-#addMilestoneButtonLink{
-    font-family: tw cen mt;
-    font-size: 18px;
-    color:#474444;
-}
-
-#navBarLeft{ grid-column: span 3; }
-#navBarRight{ grid-column: span 3; }
-
-#navBarLeft, #navBarRight{
-    background: #C6C0CA;
-    opacity: .9;
-    padding-top:8px;
-    padding-bottom:8px;
-}
-
 .firstRow{ padding-top: 40px; }
 
-/* not in use */
-.submit:hover{
-    background: #8A94B9;
-    border-color: #8A94B9;
-    color: black;
-    cursor: pointer;
-}
-
-.startDateDiv, .endDateDiv{
-    text-align:left;
-}
-
-/* not in use */
-.submit{
-    font-family: Tw Cen Mt;
-    padding: 7px 13px;
-    border-radius: 9px; border-width: 1px; border-color: #615B5B;
-    font-size: 14px;
-    color: white; background: #474444;
-}
-
-
-.iconDiv{
-    padding-left:0px; padding-right:0px; text-align:center;
-}
-
-
-/* iPhone X DESIGN HERE */
-
-@media only screen
-and (min-device-width : 375px)
-and (max-device-width : 812px)
-and (-webkit-device-pixel-ratio : 3) {
-
-}
-
 /* //////////////////////////////////////// MY GOALS PAGE CSS FILE ENDS HERE //////////////////////////////////////// */
+/* //////////////////////////////////////// RECORD GOAL PAGE CSS FILE STARTS HERE //////////////////////////////////////// */
 
-/* //////////////////////////////////////// RECPRD GOAL PAGE CSS FILE STARTS HERE //////////////////////////////////////// */
 
-
-.wrapper{
-    grid-template-columns: repeat(6,auto);
+.wrapperRecordGoal{
+    width: 100%; min-height: 100%; margin: 0 auto; display: grid; /* common properties */
+    /* grid-gap: 1px; */
+    grid-template-columns: repeat(4,auto);
     grid-template-rows: auto; 
 }
 
-.sticky {
-  position: fixed;
-  top: 0;
-}
-
 .icon{ opacity: .3; width: 50px; height: 50px; }
-.filledIcon{ opacity: 1; width: 55px; height: 55px; }
 
-#distanceError, #weightError, #unitsError, #repsError, #timeError, #baselineWeightError, #baselineExceedsGoalError, #baselineFasterThanGoalError, #baselineTimeError, #baselineRepsError{
-    position:absolute;
-    visibility: hidden;
-    color: #3C2D50;
-    font-size: 12px;
-    font-family: Courier;
-    list-style-type: none;
-}
+.innerGoalTitle { padding-top: 30px; padding-bottom: 20px; }
+.innerGoalSection { padding-top: 20px; padding-bottom: 20px; }
 
-.innerGoalTitle {
-    padding-top: 30px;
-    padding-bottom: 20px;
-}
-
-.innerGoalSection {
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
+#incentiveDescription{ display: inline-block; }
+.userInput{ display:inline; }
 
 .item1, .item2, .item3, .item4, .item5, .item6, .item7, .item8, .item9{
-    grid-column: span 6;
+    grid-column: span 4;
 }
 
+.navButtonRecordGoal{ font-size: 16px; cursor:pointer;}
 
-#incentiveDescription{
-    display: inline-block;
-    /*text-indent: 100px;*/
-}
-
-.userInput{
-    display:inline;
-}
-
-.preface{
-    font-family: TW Cen Mt;
-    font-size:22px;
-}
+.preface{ font-family: TW Cen Mt; font-size:22px; }
 
 .exerciseInput, .baselineInput, .activityInput{
     font-family: Courier;
     font-size: 20px;
     display: inline;
-    /* width: auto; */
     margin: 0px;
     background: none;
     text-align: left;
@@ -569,23 +384,26 @@ and (-webkit-device-pixel-ratio : 3) {
     color: white; background: #474444;
 }
 
-
 .timeframe:focus{ outline: none; }
 .timeframe:hover{ cursor: pointer; }
 
-
-
-
 /* //////////////////////////////////////// RECORD GOAL PAGE CSS FILE ENDS HERE //////////////////////////////////////// */
-
 /* //////////////////////////////////////// SELECT GOAL TYPE PAGE CSS FILE STARTS HERE //////////////////////////////////////// */
 
-.wrapper{
+.wrapper-selectgoal{
+    width: 100%; min-height: 100%; margin: 0 auto; display: grid; /* common properties */
+    /* grid-gap: 1px; */
     grid-template-columns: 1fr auto auto 1fr;
     grid-template-rows: auto; 
 }
 
-.HeaderDiv{
+.itemSelectGoal{
+    background: white;
+    padding: 15px;
+    font-family: Tw Cen Mt; color: black; text-align: left; 
+}
+
+.headerDivSelectGoal{
     padding-top: 50px;
     padding-bottom: 25px;
     text-align: left;
@@ -601,18 +419,21 @@ and (-webkit-device-pixel-ratio : 3) {
 .performButtonDiv{padding-left: 10px;}
 
 .titleDiv{text-align:left;}
-.iconDiv{text-align:left;}
+.iconDivSelectGoal{text-align:left;}
 .title{ font-family: Tw Cen Mt; font-size: 28px; }
 
-.icon{ width: 110px; height:auto; }
+.icon-selectgoal{ width: 110px; height:auto; }
 
-.goaltype, .commitGoal, .performGoal{border: none; opacity: .3;}
+.goaltype, .commitGoal, .performGoal{
+    border: none; 
+    /* opacity: .3; */
+}
 .goaltype:focus, .commitGoal:focus, .performGoal:focus{ outline: none; }
 .goaltype:hover, .commitGoal:hover, .performGoal:hover{ cursor: pointer; }
 
 .infoDiv{ text-align: left; max-width: 360px; }
 
-.info{
+.infoSelectGoal{
     font-family: Tw Cen Mt;
     font-size: 15px;
     text-align: left;
@@ -622,21 +443,6 @@ and (-webkit-device-pixel-ratio : 3) {
 .buttonDiv {padding-top: 30px; padding-bottom: 30px; text-align:left;}
 
 .button:hover{ background-position: 0 -100%;}
-
-.button{
-    font-family: Tw Cen Mt;
-    padding: 7px 13px;
-    border-radius: 9px;
-    border-width: 1px;
-    font-size: 15px;
-    color: white;
-    /*background: #474444;*/
-    background-size: 100% 200%;
-    background-image: linear-gradient(to bottom, #474444 50%, #8A94B9 50%);
-    -webkit-transition: background-position .5s;
-    -moz-transition: background-position .5s;
-    transition: background-position .5s;
-}
 
 .goToGoal:hover{
     background: #8A94B9;
@@ -655,76 +461,54 @@ and (-webkit-device-pixel-ratio : 3) {
 
 .bottomRow{grid-column: span 4; height: 250px;}
 
-
-/* iPhone X */
-@media only screen
-and (min-device-width : 375px)
-and (max-device-width : 812px)
-and (-webkit-device-pixel-ratio : 3) {
-
-    /* iPhone styling here*/
-
-}
-
 /* //////////////////////////////////////// SELECT GOAL TYPE PAGE CSS FILE ENDS HERE //////////////////////////////////////// */
-
 /* //////////////////////////////////////// SELECT PERFORMANCE GOAL TYPE PAGE CSS FILE STARTS HERE //////////////////////////////////////// */
 
-.wrapper{
+.wrapper-performance{
+    width: 100%; min-height: 100%; margin: 0 auto; display: grid; /* common properties */
+    /* grid-gap: 1px; */
     grid-template-columns: 1fr auto auto 1fr;
     grid-template-rows: auto;
 }
 
-#navBarLeft{ grid-column:span 3; padding-left: 15px; text-align: left; }
-#navBarRight{ grid-column:span 1; padding-right: 15px; text-align: right; }
-
-#navBarLeft, #navBarRight{
-    background: #C6C0CA;
-    opacity: .9;
-    padding-top:8px; padding-bottom:8px;
-}
-
-.headerDiv{
+.headerDiv-performance{
     grid-column: span 2;
     padding-top: 70px;
     padding-bottom: 25px;
     text-align:left;
 }
 
-.iconDiv{
+#instructionsPerformance{
+    font-family: Courier;
+    font-weight: 500;
+    font-size: 21px;
+    text-align:left;
+}
+
+.performanceGoalIcon{
+    height:50px; width:auto;
+}
+
+.iconDiv-performance{
     cursor:pointer;
     text-align:center;
     padding-top: 25px;
 }
 
-.buttonDiv{
+.buttonDiv-performance{
     grid-column: span 2;
     padding-top: 50px;
     text-align:left;
 }
 
-.textDiv{cursor:pointer; }
+.textDiv-performance{cursor:pointer; padding-left:0px}
 
 ::selection {
     color: none;
     background: none;
 }
 
-.bottomDiv{ grid-column: span 4; height: 200px; }
-
-/* need these to be IDs rather than classes for JS logic */
-#weightliftingIcon, #bodyweightIcon, #tempoIcon, #commitmentIcon{ opacity: .3; }
-
-
-/* iPhone X */
-@media only screen
-and (min-device-width : 375px)
-and (max-device-width : 812px)
-and (-webkit-device-pixel-ratio : 3) {
-
-    /* iPhone styling here*/
-
-}
+.bottomDiv-performance{ grid-column: span 4; height: 200px; }
 
 .description{
     text-align: left;
@@ -732,143 +516,4 @@ and (-webkit-device-pixel-ratio : 3) {
     color: grey;
 }
 
-.button:focus{ outline: none; }
-.button:hover{ cursor: pointer; }
-.button{ 
-    border: none; 
-    /* align-items:right; */
-}
-
-.goToGoal:hover{
-    background: #8A94B9;
-    border-color: #8A94B9;
-    color: black;
-    cursor: pointer;
-}
-
-.goToGoal{
-    font-family: Tw Cen Mt;
-    padding: 7px 13px;
-    border-radius: 9px; border-width: 1px; border-color: #615B5B;
-    font-size: 18px;
-    color: white; background: #474444;
-}
-
-#instructions{
-    font-family: Courier;
-    font-weight: 500;
-    font-size: 21px;
-    text-align:left;
-}
-
-.timeframe:focus{ outline: none; }
-.timeframe:hover{ cursor: pointer; }
-
 /* //////////////////////////////////////// SELECT PERFORMANCE GOAL TYPE PAGE CSS FILE ENDS HERE //////////////////////////////////////// */
-
-
-/* iPhone X DESIGN HERE */
-
-@media only screen
-and (min-device-width : 375px)
-and (max-device-width : 812px)
-and (-webkit-device-pixel-ratio : 3) {
-
-    /**/
-
-    .wrapper{
-        width: 100%; min-height: 100%;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 400px repeat(4,1fr) 400px;
-        grid-template-rows: auto;
-        /*grid-gap: 3px;*/
-    }
-
-    .icon{ opacity: .3; width: 130px; height: 130px; }
-    .filledIcon{ opacity: 1; width: 150px; height: 150px; }
-
-    #home{
-        color: #8A94B9;
-        font-family: Calibri;
-        font-weight: 600;
-        font-size: 50px;
-    }
-
-    #profileIcon{ opacity: .6; width: 70px; height: 70px; }
-
-    .innerGoalSection {
-        padding-top: 50px;
-        padding-bottom: 50px;
-    }
-
-    .innerGoalTitle {
-        padding-top: 70px;
-        padding-bottom: 50px;
-        padding-right: 50px;
-        padding-left: 50px;
-    }
-
-    .preface, #incentiveAmount, #incentiveDollarSign{
-        font-family: TW Cen Mt;
-        font-size: 35pt;
-    }
-
-    .exerciseInput, .baselineInput, .activityInput{
-        font-family: Courier;
-        font-size: 27pt;
-        display: inline;
-        width: auto;
-        margin: 0px;
-        background: none;
-        text-align: left;
-        text-indent: 20px;
-        height: 50px;
-        border: 1px;
-        border-radius: 20px;
-        border-top-right-radius: 10px;
-        background: #C6C0CA;
-    }
-
-    .timeframe{
-        font-family: Courier;
-        padding: 12px 18px;
-        border-radius: 14px; border-width: 1px; border-color: #C6C0CA;
-        font-size: 22px;
-        color: grey; background: #C6C0CA;
-    }
-
-    .submit:hover{
-        background: #8A94B9;
-        border-color: #8A94B9;
-        color: black;
-        cursor: pointer;
-    }
-
-    /* this is currently a hack because for some reason the preface class is not shrinking
-    any text except for this one, so this needs a font-size adjustment to override*/
-
-    #iWant{
-        font-size:48px;
-    }
-
-    .submit{
-    font-family: Tw Cen Mt;
-    padding: 7px 13px;
-    border-radius: 9px; border-width: 1px; border-color: #615B5B;
-    font-size: 20px; /* need to make submit button larger on mobile - not sure why this doesn't increase font size */
-    color: white; background: #474444;
-    }
-
-    .notesInput{
-        font-family: Courier;
-        font-size: 8px;
-        width: 500px;
-        height: 100px;
-        padding: 10px;
-        margin: 0px;
-        border-color: black;
-        background: none;
-        text-align: left;
-    }
-}

@@ -4,7 +4,10 @@ import { Fragment } from 'react';
 import {Link} from 'react-router-dom';
 
 // STYLESHEETS
-// import '../CSS/master.css'; 
+import '../CSS/master.css'; 
+
+// BANNER
+import Banner from '../components/record-goal-components/_banner.js';
 
 // ICONS
 import profileIcon from '../images/person_head.svg';
@@ -28,27 +31,18 @@ class MyGoals extends Component {
 
     render() {
         return (
-            <div className = "wrapper">
-
-                <div className ="item banner" id ="navBarLeft"> 
-                    <Link to = "/"> 
-                        <span id ="home"> sweatbank </span> 
-                    </Link> 
-                </div>
-                
-                <div className ="item banner" id ="navBarRight"> 
-                    <a href= "file:sweatbank_profile.html">
-                        <img src={profileIcon} id="profileIcon"/>
-                    </a> 
-                </div>
+            
+            <Fragment>
+                <Banner/>
+            <div className = "wrapper-mygoals">
 
                 <Fragment>
-                <div className = "item"> <div className = "headerDiv firstCol" > Goal </div> </div>
-                <div className = "item"> <div className = "headerDiv" > Type </div> </div>
-                <div className = "item"> <div className = "headerDiv" > Start </div> </div>
-                <div className = "item"> <div className = "headerDiv" > End </div> </div>
-                <div className = "item"> <div className = "headerDiv" > Progress </div> </div>
-                <div className = "item"> <div className = "headerDiv lastCol" > Update </div> </div>
+                <div className = "item"> <div className = "headerDiv-mygoals firstCol" > Goal </div> </div>
+                <div className = "item"> <div className = "headerDiv-mygoals" > Type </div> </div>
+                <div className = "item"> <div className = "headerDiv-mygoals" > Start </div> </div>
+                <div className = "item"> <div className = "headerDiv-mygoals" > End </div> </div>
+                <div className = "item"> <div className = "headerDiv-mygoals" > Progress </div> </div>
+                <div className = "item"> <div className = "headerDiv-mygoals lastCol" > Update </div> </div>
                 </Fragment>
 
                 {/* 
@@ -69,6 +63,7 @@ class MyGoals extends Component {
                 <GoalRow icon = {liftIcon}/>
 
              </div>
+             </Fragment>
         );
     }
 }

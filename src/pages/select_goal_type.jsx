@@ -4,7 +4,10 @@ import { Fragment } from 'react';
 import {Link} from 'react-router-dom';
 
 // STYLESHEETS
-// import '../CSS/master.css';
+import '../CSS/master.css';
+
+// BANNER
+import Banner from '../components/record-goal-components/_banner.js';
 
 import myProfile from '../images/person_head.svg';
 
@@ -18,72 +21,98 @@ import PerformanceGoalIcon from '../components/_performanceGoalIcon.js';
 import PerformanceGoalDescription from '../components/_performanceGoalDescription.js';
 import PerformanceGoalButton from '../components/_performanceGoalButton.js';
 
+
 class SelectGoalType extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            hover:'',
             selected:'',
+            hover:''
         };
     }
 
-    setHover(s){
-
+    setSelected(s){
+        this.setState({selected:s})
     }
 
-    setSelected(s){
-
+    setHover(s){
+        this.setState({hover:s})
     }
 
     render(){
     
         return(
+        
+        <Fragment>
+        <Banner/>    
+        <div className = "wrapper-selectgoal">
 
-            <div className = "wrapper">
+            <div className = "itemSelectGoal emptyDiv"/>
+            <div className = "headerDivSelectGoal itemSelectGoal">Click to select a goal type: </div>
+            <div className = "itemSelectGoal emptyDiv"/> <div className = "itemSelectGoal emptyDiv"/>
 
-            <div className ="item banner" id ="navBarLeft">
-                <Link className = "pagelink" to = "/">
-                    <span id ="home"> sweatbank </span>
-                </Link>
-            </div>
+            <CommitmentGoalTitle 
+                selected = {this.state.selected} 
+                setSelected = {this.setSelected.bind(this)}
+                hover = {this.state.hover} 
+                setHover = {this.setHover.bind(this)}
+            />
+
+            <PerformanceGoalTitle 
+                selected = {this.state.selected} 
+                setSelected = {this.setSelected.bind(this)}
+                hover = {this.state.hover} 
+                setHover = {this.setHover.bind(this)}
+            />
+
+            <div className = "itemSelectGoal emptyDiv"/> <div className = "itemSelectGoal emptyDiv"/>
+
+            <CommitmentGoalIcon 
+                selected = {this.state.selected} 
+                setSelected = {this.setSelected.bind(this)}
+                hover = {this.state.hover} 
+                setHover = {this.setHover.bind(this)}
+            />
+
+            <PerformanceGoalIcon 
+                selected = {this.state.selected} 
+                setSelected = {this.setSelected.bind(this)}
+                hover = {this.state.hover} 
+                setHover = {this.setHover.bind(this)}
+            />
             
-            <div className ="item banner" id ="navBarRight">
-                <Link className = "pagelink" to = "/myprofile" > 
-                    <img src={myProfile} id="profileIcon"/> 
-                </Link>
-            </div>
+            <div className = "itemSelectGoal emptyDiv"/> <div className = "itemSelectGoal emptyDiv"/>
 
-            <div className = "item emptyDiv"/>
-            <div className = "item HeaderDiv"> Click to select a goal type: </div>
-            <div className = "item emptyDiv"/> <div className = "item emptyDiv"/>
+            <CommitmentGoalDescription 
+                selected = {this.state.selected} 
+                setSelected = {this.setSelected.bind(this)}
+                hover = {this.state.hover} 
+                setHover = {this.setHover.bind(this)}
+            />
 
-            <CommitmentGoalTitle hover = {this.state.hover} selected = {this.state.selected} setHover/>
-            <PerformanceGoalTitle />
-
-            <div className = "item emptyDiv"/> <div className = "item emptyDiv"/>
-
-            <CommitmentGoalIcon/>
-            <PerformanceGoalIcon/>
+            <PerformanceGoalDescription 
+                selected = {this.state.selected} 
+                setSelected = {this.setSelected.bind(this)}
+                hover = {this.state.hover} 
+                setHover = {this.setHover.bind(this)}
+            />
             
-            <div className = "item emptyDiv"/> <div className = "item emptyDiv"/>
+            <div className = "itemSelectGoal emptyDiv"/> <div className = "itemSelectGoal emptyDiv"/>
+            
+            <CommitmentGoalButton selected = {this.state.selected} />
+            <PerformanceGoalButton selected = {this.state.selected} />
+            
+            <div className = "itemSelectGoal emptyDiv"/>
 
-            <CommitmentGoalDescription/>
-            <PerformanceGoalDescription/>
-            
-            <div className = "item emptyDiv"/> <div className = "item emptyDiv"/>
-            
-            <CommitmentGoalButton/>
-            <PerformanceGoalButton/>
-            
-            <div className = "item emptyDiv"/>
-
-            <div className = "item emptyDiv bottomRow"> </div>
+            <div className = "itemSelectGoal emptyDiv bottomRow"> </div>
 
         </div>
+        </Fragment>
 
         );
     }
 }
 
 export default SelectGoalType;
+

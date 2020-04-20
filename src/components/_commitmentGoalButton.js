@@ -7,22 +7,29 @@ class CommitmentGoalButton extends Component {
   constructor(props) {
       super(props);
       this.state = {
-        opacity:''
+        buttonClasses:'navButton disallowed'
       };
   }
 
   componentDidUpdate(prevProps) { 
-
+    if(this.props.selected !== prevProps.selected){
+      if (this.props.selected !== "commitment"){
+        this.setState({buttonClasses:"navButton disallowed"})
+      }
+      else{
+        this.setState({buttonClasses:"navButton allowed"})
+      }
+    }
   }
 
   render() {
 
     return ( 
-        <div className = "item buttonDiv commitButtonDiv">
+        <div className = "itemSelectGoal buttonDiv commitButtonDiv">
             <Link 
-                className = "button disallowed" 
+                className = {this.state.buttonClasses}
                 id = "commitmentButton" 
-                to = "/recordgoal" >
+                to = "/recordcommitmentgoal" >
                 add details
             </Link>
         </div>

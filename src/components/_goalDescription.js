@@ -13,12 +13,11 @@ class GoalDescription extends Component {
       this.setInformation = this.setInformation.bind(this);
       this.setExample = this.setExample.bind(this);
       this.state = {
-        buttonClasses:'button',
         exercises:'',
         information:'',
         example:'',
         selected:'',
-        iconOpacity:'',
+        opacity:.3,
         textColor:''
       };
   }
@@ -27,7 +26,7 @@ class GoalDescription extends Component {
     if(this.props.selectedGoalType !== prevProps.selectedGoalType){
       if( this.props.selectedGoalType !== this.props.goalType ){
         this.setState({textColor:'gray'})
-        this.setState({iconOpacity:.3})
+        this.setState({opacity:.3})
         this.setState({selected:false})
       }
     }
@@ -67,13 +66,13 @@ class GoalDescription extends Component {
   handleClick(e){
     if (this.state.selected === true){
         this.setState({textColor:'gray'})
-        this.setState({iconOpacity:.3})
+        this.setState({opacity:.3})
         this.setState({selected:false})
         this.props.setSelectedGoalType("none")
     }
     else {
         this.setState({textColor:'black'})
-        this.setState({iconOpacity:1})
+        this.setState({opacity:1})
         this.setState({selected:true})
         this.props.setSelectedGoalType(this.props.goalType)
     }
@@ -85,7 +84,7 @@ class GoalDescription extends Component {
     }
     else {
         this.setState({textColor:'gray'})
-        this.setState({iconOpacity:.3})
+        this.setState({opacity:.3})
     }
   }
 
@@ -95,7 +94,7 @@ class GoalDescription extends Component {
     }
     else {
         this.setState({textColor:'gray'})
-        this.setState({iconOpacity:.7})
+        this.setState({opacity:.7})
     }
   }
 
@@ -105,30 +104,27 @@ class GoalDescription extends Component {
             <div className = "item emptyDiv"/>
             
             <div 
-                className ="item iconDiv firstCol"
+                className ="item iconDiv-performance"
                 onClick = {this.handleClick.bind(this)} 
                 onMouseLeave = {this.handleMouseLeave.bind(this)} 
                 onMouseEnter = {this.handleMouseEnter.bind(this)} >
-
-                <button className = {this.state.buttonClasses}>
                     <img 
-                        src={this.props.icon} 
-                        id="tempoIcon"
-                        style = {{opacity:this.state.iconOpacity}}
+                      className = "performanceGoalIcon" 
+                      src={this.props.icon} 
+                      style = {{opacity:this.state.opacity}}
                     />
-                </button>
             </div>
 
             <div 
-                className ="item textDiv"
+                className ="item textDiv-performance"
                 onClick = {this.handleClick.bind(this)} 
                 onMouseLeave = {this.handleMouseLeave.bind(this)} 
                 onMouseEnter = {this.handleMouseEnter.bind(this)} >
 
-                <div className = "description">
+                <div className = "description" style = {{opacity:this.state.opacity}}>
                     <span style = {{color:this.state.textColor}}> {this.props.goalType}: </span>
                     
-                    <span className =  "examples" id = "tempoDescription">
+                    <span className = "examples" id = "tempoDescription">
                     {this.state.exercises} <br/> 
                     
                     <span style = {{color:this.state.textColor}}> info: </span>

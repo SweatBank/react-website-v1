@@ -63,6 +63,7 @@ class CommitmentActivityInput extends Component {
             id = "exercise" 
             type = "text" 
             placeholder = {this.state.placeholder} 
+            maxLength = "50"
             autofocus /> 
         </form> 
     );

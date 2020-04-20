@@ -1,13 +1,22 @@
 // PACKAGES
 import React, {Component} from 'react';
+import {Fragment} from 'react';
 import {Link} from 'react-router-dom';
 
-// STYLESHEETS
-// import '../CSS/master.css';
+// COMPONENTS
+import GoalText from '../components/_goalText.js';
+import BaselineText from '../components/_baselineText.js';
+import ProgressText from '../components/_progressText.js';
+import TodayText from '../components/_todayText.js';
+import EndDateText from '../components/_endDateText.js';
+import DaysLeftText from '../components/_daysLeftText.js';
+import RecordProgressButton from '../components/_recordProgressButton.js';
 
-// IMAGES
-import liftIcon from '../images/dumbbell.svg';
-import myProfile from '../images/person_head.svg';
+// STYLESHEETS
+import '../CSS/master.css';
+
+// BANNER
+import Banner from '../components/record-goal-components/_banner.js';
 
 
 class AddProgress extends Component {
@@ -19,124 +28,28 @@ class AddProgress extends Component {
 
     render(){
         return(
-            <div className = "wrapper wrapper-addprogress">
+            
+            <Fragment>
+            <Banner/>              
+            
+            <div className = "wrapper-addprogress">
+            
+                <div className ="item emptyDiv"/>
+                <div className ="item headerDiv-addprogress"> Add Progress </div>
+                <div className ="item emptyDiv"/>
 
-                <div className ="item item01 banner" id ="navBarLeft"> 
-                    <a href= "file:home.html"> 
-                        <span id ="home"> sweatbank </span> 
-                    </a> 
-                </div>
-                
-                <div className ="item item02 banner" id ="navBarMid"> </div>
-                
-                <div className ="item item03 banner" id ="navBarRight"> 
-                    <a href= "file:sweatbank_profile.html"> 
-                        <img src= {myProfile} id="profileIcon"/> 
-                    </a> 
-                </div>
-
-
-                <div className ="item titleDiv-addprogress"> 
-                    <div className = "innerTitleDiv-addprogress firstRow-addprogress">
-                        <span className = "title-addprogress">goal</span>
-                    </div> 
-                </div>
-
-                <div className ="item contentDiv-addprogress">
-                    <div className = "innerContentDiv-addprogress firstRow-addprogress">
-                        <span className = "staticText previousInput goal lift"> squat </span> &nbsp;
-                        <span className = "staticText previousInput goal goalWeight"> 255 </span> &nbsp;
-                        <span className = "staticText previousInput goal units"> lbs </span> &nbsp;
-                        <span className = "staticText previousInput goal reps"> 5 </span> &nbsp;
-                        <span className = "staticText goal"> times </span>
-                    </div>
-                </div>
-
-                <div className ="item titleDiv-addprogress"> 
-                    <div className = "innerTitleDiv-addprogress">
-                        <span className = "title-addprogress">baseline</span>
-                    </div> 
-                </div>
-
-                <div className ="item contentDiv-addprogress">
-                    <div className = "innerContentDiv-addprogress">
-                        <span className = "staticText previousInput baseline lift"> squat </span> &nbsp;
-                        <span className = "staticText previousInput baseline baselineWeight"> 175 </span> &nbsp;
-                        <span className = "staticText previousInput baseline units"> lbs </span> &nbsp;
-                        <span className = "staticText previousInput baseline reps"> 5 </span> &nbsp;
-                        <span className = "staticText goal"> times </span>
-                    </div>
-                </div>
-
-                <div className ="item titleDiv-addprogress"> 
-                    <div className = "innerTitleDiv-addprogress">
-                        <span className = "title-addprogress">this milestone</span>
-                    </div> 
-                </div>
-
-                <div className ="item contentDiv-addprogress">
-                    <div className = "innerContentDiv-addprogress">
-                        <span className = "staticText previousInput thisMilestone lift"> squat </span> &nbsp;
-                        <form className = "userInput"><input className ="exerciseInput" id = "thisMilestoneWeight" type ="text" placeholder="205" autofocus/></form> &nbsp;
-                        <span className = "staticText previousInput thisMilestone units"> lbs </span> &nbsp;
-                        <span className = "staticText previousInput thisMilestone reps"> 5 </span> &nbsp;
-                        <span className = "staticText goal"> times </span>
-                    </div>
-                </div>
-
-                <div className ="item titleDiv-addprogress">
-                    <div className = "innerTitleDiv-addprogress">
-                        <span className = "title-addprogress">today</span>
-                    </div> 
-                </div>
-
-                <div className ="item contentDiv-addprogress"> 
-                    <div className = "innerContentDiv-addprogress" id = "today"> 
-                        <span> 4/15/2020 </span> 
-                    </div>
-                </div>
-
-                <div className ="item titleDiv-addprogress">
-                    <div className = "innerTitleDiv-addprogress">
-                        <span className = "title-addprogress">goal end date</span>
-                    </div>
-                </div>
-
-                <div className ="item contentDiv-addprogress">
-                    <div className = "innerContentDiv-addprogress" id = "goalEndDate"> 
-                        <span> 4/21/2020 </span> 
-                    </div>
-                </div>
-
-                <div className ="item titleDiv-addprogress"> 
-                    <div className = "innerTitleDiv-addprogress">
-                        <span className = "title-addprogress">days remaining</span>
-                    </div>
-                </div>
-                
-                <div className ="item contentDiv-addprogress"> 
-                    <div className = "innerContentDiv-addprogress" id = "daysLeft"> 
-                        <span> 6 </span> 
-                    </div>
-                </div>
-
-                <div className ="item titleDiv-addprogress">
-                    <div className = "buttonSection-addprogress"> 
-                        <button className = "navButton navButton-addprogress disallowed"> 
-                            record milestone 
-                        </button>
-                    </div>
-                </div>
-                
-                <div className ="item contentDiv-addprogress">
-                    <div className = "iconSection-addprogress">
-                        <img className = "goalTypeIcon-addprogress"src = {liftIcon} ></img>
-                    </div>
-                </div>
+                <GoalText/>
+                <BaselineText/>
+                <ProgressText/>
+                <TodayText/>
+                <EndDateText/>
+                <DaysLeftText/>
+                <RecordProgressButton/>
 
                 <div className ="item bottomRow-addprogress"></div>
 
             </div>
+            </Fragment>
         );
     }
 }

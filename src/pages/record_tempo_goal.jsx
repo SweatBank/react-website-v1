@@ -3,7 +3,7 @@ import { Fragment } from 'react';
 import tempoIcon from '../images/tempo.svg';
 
 // STYLESHEETS
-// import '../CSS/master.css';
+import '../CSS/master.css';
 
 // BANNER
 import Banner from '../components/record-goal-components/_banner.js';
@@ -131,7 +131,8 @@ class Goal extends Component {
   render() {
     return (
       <Fragment>
-        <Banner/>
+      <Banner/>
+      <div className = "wrapperRecordGoal">  
       {/* GOAL DIV */}
         <div className = "item item1">
             <div className = "innerGoalTitle">
@@ -181,6 +182,7 @@ class Goal extends Component {
             validBaseline = {this.state.validTempoBaseline}
             timeframe = {this.state.goalTimeframe} 
           />
+          </div>
 
       </Fragment>
 

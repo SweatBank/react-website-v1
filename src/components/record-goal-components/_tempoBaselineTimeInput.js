@@ -83,6 +83,7 @@ class TempoBaselineTimeInput extends Component {
             style = {{backgroundColor: this.state.fillColor}}
             id = "baselineTime" 
             type = "text" 
+            maxlength = "4"
             placeholder = {this.state.placeholder} /> 
         </form>
     );

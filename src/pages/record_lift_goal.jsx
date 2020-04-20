@@ -3,7 +3,7 @@ import { Fragment } from 'react';
 import liftIcon from '../images/dumbbell.svg';
 
 // STYLESHEETS
-// import '../CSS/master.css'; 
+import '../CSS/master.css'; 
 
 // BANNER
 import Banner from '../components/record-goal-components/_banner.js';
@@ -163,30 +163,30 @@ class Goal extends Component {
 
     return (
       <Fragment>
-        <Banner/>
-        
+      <Banner/>
+      <div className = "wrapperRecordGoal">  
       {/* GOAL DIV */}
         <div className = "item item1">
-            <div className = "innerGoalTitle">
-              <GoalIcon icon = {liftIcon} validGoal = {this.state.validLiftGoal}/>
-              <GoalPrefaceText goalType = {this.state.goalType}/> {" "}
-              <LiftExerciseInput goalType = {this.state.goalType} setLiftExercise = {this.setLiftExercise.bind(this)} /> {" "}
-              <LiftGoalWeightInput goalType = {this.state.goalType} setLiftGoalWeight = {this.setLiftGoalWeight.bind(this)} baselineWeight = {this.state.liftBaselineWeight} /> {" "}
-              <LiftRepsInput goalType = {this.state.goalType} setLiftReps = {this.setLiftReps.bind(this)} /> {" "}
-              <LiftTimesText reps = {this.state.liftReps} goalType = {this.state.goalType} />
-            </div>
+          <div className = "innerGoalTitle">
+            <GoalIcon icon = {liftIcon} validGoal = {this.state.validLiftGoal}/>
+            <GoalPrefaceText goalType = {this.state.goalType}/> {" "}
+            <LiftExerciseInput goalType = {this.state.goalType} setLiftExercise = {this.setLiftExercise.bind(this)} /> {" "}
+            <LiftGoalWeightInput goalType = {this.state.goalType} setLiftGoalWeight = {this.setLiftGoalWeight.bind(this)} baselineWeight = {this.state.liftBaselineWeight} /> {" "}
+            <LiftRepsInput goalType = {this.state.goalType} setLiftReps = {this.setLiftReps.bind(this)} /> {" "}
+            <LiftTimesText reps = {this.state.liftReps} goalType = {this.state.goalType} />
+          </div>
         </div>
         
       {/* BASELINE DIV */}
         <div className = "item item2">
-            <div className = "innerGoalSection">
-                <BaselineIcon validBaseline = {this.state.validLiftBaseline} goalType = {this.state.goalType} />
-                <BaselinePrefaceText goalType = {this.state.goalType}/> {" "}
-                <LiftBaselineExerciseText exercise = {this.state.liftExercise} goalType = {this.state.goalType}/> {" "}
-                <LiftBaselineWeightInput goalType = {this.state.goalType} setLiftBaselineWeight = {this.setLiftBaselineWeight.bind(this)} goalWeight = {this.state.liftGoalWeight} />
-                <LiftBaselineRepsText reps = {this.state.liftReps} goalType = {this.state.goalType}/> {" "}
-                <LiftTimesText reps = {this.state.liftReps} goalType = {this.state.goalType} />
-            </div>
+          <div className = "innerGoalSection">
+            <BaselineIcon validBaseline = {this.state.validLiftBaseline} goalType = {this.state.goalType} />
+            <BaselinePrefaceText goalType = {this.state.goalType}/> {" "}
+            <LiftBaselineExerciseText exercise = {this.state.liftExercise} goalType = {this.state.goalType}/> {" "}
+            <LiftBaselineWeightInput goalType = {this.state.goalType} setLiftBaselineWeight = {this.setLiftBaselineWeight.bind(this)} goalWeight = {this.state.liftGoalWeight} />
+            <LiftBaselineRepsText reps = {this.state.liftReps} goalType = {this.state.goalType}/> {" "}
+            <LiftTimesText reps = {this.state.liftReps} goalType = {this.state.goalType} />
+          </div>
         </div>
       
       {/* TIMEFRAME DIV */}
@@ -197,7 +197,6 @@ class Goal extends Component {
                 <TwoWeeksButton setTimeframe = {this.setTimeframe.bind(this)} timeframe = {this.state.goalTimeframe} />
                 <ThreeWeeksButton setTimeframe = {this.setTimeframe.bind(this)} timeframe = {this.state.goalTimeframe} />
                 <FourWeeksButton setTimeframe = {this.setTimeframe.bind(this)} timeframe = {this.state.goalTimeframe} />
-
             </div>
           </div>
           {/* <Incentive/> */}
@@ -208,6 +207,7 @@ class Goal extends Component {
             validBaseline = {this.state.validLiftBaseline} 
             timeframe = {this.state.goalTimeframe} 
           />
+        </div>  
       </Fragment>
 
     );

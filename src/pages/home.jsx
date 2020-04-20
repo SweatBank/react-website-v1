@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 import SweatBankLogoPath from '../_constants.js'
 
 // STYLESHEETS
-// import '../CSS/master.css';
+import '../CSS/master.css';
 
 
 class Home extends Component {
@@ -24,7 +24,7 @@ class Home extends Component {
                     SweatBank
                     </div>
                 </div>
-                <div className ="item iconsDiv">
+                <div className ="item iconsDiv-home">
                     <div >
                         <svg width="137.28mm" height="200.74mm" version="1.1" viewBox="0 0 137.27745 200.7415" xmlns="http://www.w3.org/2000/svg" id = "logo">
                         <g transform="translate(144.04 -1.3416)">
@@ -49,11 +49,10 @@ class Home extends Component {
                         <Link className = "navButton navButton-home" id = "addGoal" to='/mygoals'>my goals</Link>
                         <br/> <br/> <br/>
                         <Link className = "infoButton-home" to='/howitworks'>how it works</Link>
-                        &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp;
                         <Link className = "infoButton-home" to='/aboutus'>about us</Link>
                     </div>
                 </div>
-                <div className ="item item9"></div>
             </div>
         );
     }

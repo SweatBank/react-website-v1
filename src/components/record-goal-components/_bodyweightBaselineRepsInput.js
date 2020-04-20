@@ -85,6 +85,7 @@ class BodyweightBaselineRepsInput extends Component {
             className = "exerciseInput numberInput" 
             id = "baselineReps" 
             type = "text" 
+            maxLength = "5"
             placeholder = {this.state.placeholder} 
             /> 
         </form>

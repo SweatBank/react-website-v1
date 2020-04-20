@@ -84,6 +84,7 @@ class TempoGoalTimeInput extends Component {
             className = "exerciseInput numberInput" 
             id = "time" 
             type = "text" 
+            maxlength = "4"
             placeholder = {this.state.placeholder} /> 
         </form>
     );

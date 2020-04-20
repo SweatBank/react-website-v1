@@ -60,6 +60,7 @@ class LiftRepsInput extends Component {
           className = "exerciseInput numberInput" 
           id = "reps" 
           type = "text" 
+          maxlength = "3"
           placeholder = {this.state.placeholder} /> 
       </form>
     );

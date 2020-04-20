@@ -5,7 +5,7 @@ class Submit extends Component {
   constructor(props) {
       super(props);
       this.state = {
-        buttonClasses: 'submit disallowed'
+        buttonClasses: 'navButton navButtonRecordGoal disallowed'
     };
   }
 
@@ -15,10 +15,10 @@ class Submit extends Component {
         |this.props.validBaseline !== prevProps.validBaseline 
         |this.props.timeframe !== prevProps.timeframe ){
         if ( this.props.validBaseline && this.props.validGoal && this.props.timeframe !== "none" ){ 
-          this.setState({buttonClasses:'submit allowed'})
+          this.setState({buttonClasses:'navButton navButtonRecordGoal allowed'})
         }
         else { 
-          this.setState({buttonClasses:'submit disallowed'})
+          this.setState({buttonClasses:'navButton navButtonRecordGoal disallowed'})
         }
       }
     }
@@ -26,16 +26,14 @@ class Submit extends Component {
       if(this.props.validGoal !== prevProps.validGoal 
         |this.props.timeframe !== prevProps.timeframe ){
         if ( this.props.validGoal && this.props.timeframe !== "none" ){ 
-          this.setState({buttonClasses:'submit allowed'})
+          this.setState({buttonClasses:'navButton navButtonRecordGoal allowed'})
         }
         else { 
-          this.setState({buttonClasses:'submit disallowed'})
+          this.setState({buttonClasses:'navButton navButtonRecordGoal disallowed'})
         }
       }
     }
   }
-
-  // add "onSubmit function" that passes all goal properties to a new goalReceipt component
 
   render() {
     return (

@@ -71,6 +71,7 @@ class TempoDistanceInput extends Component {
             className = "exerciseInput numberInput" 
             id = "distance" 
             type = "text" 
+            maxlength = "3"
             placeholder = {this.state.placeholder} /> 
         </form>
     );

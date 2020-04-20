@@ -56,6 +56,7 @@ class LiftExerciseInput extends Component {
           id = "exercise" 
           type = "text" 
           placeholder = {this.state.placeholder} 
+          maxlength = "20"
           autoFocus // autofocus is not working for some reason
         /> 
       </form> 

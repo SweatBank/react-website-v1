@@ -59,8 +59,9 @@ class TempoExerciseInput extends Component {
           style = {{backgroundColor: this.state.fillColor}}
           id = "exercise" 
           type = "text" 
+          maxlength = "15"
           placeholder = {this.state.placeholder} 
-          autofocus /> 
+          autofocus = "true" /> 
       </form> 
     );
   }

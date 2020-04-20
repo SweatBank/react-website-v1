@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Fragment } from 'react';
 import {Link} from 'react-router-dom';
 
+// composition:
+// container that takes an ID, from which 
 
 class GoalRow extends Component {
 
@@ -23,44 +25,44 @@ class GoalRow extends Component {
   render() {
     return (
       <Fragment>
-      <div className = "item goalStringDiv"> 
-        <div className = "contentDiv firstCol" > 
+      <div className = "itemMyGoals goalStringDiv"> 
+        <div className = "contentDiv-mygoals firstCol" > 
           <div 
-            className = "internalContentDiv"
+            className = "internalcontentDiv-mygoals"
             style = {{color:this.state.textColor}}> 
             <br></br> {this.state.completeGoalString} 
           </div> 
         </div> 
       </div>
       
-      <div className = "item iconDiv"> 
-        <div className = "contentDiv" > 
+      <div className = "itemMyGoals iconDiv"> 
+        <div className = "contentDiv-mygoals" > 
           <img src = {this.props.icon} className ="goalTypeIcon"/> 
         </div> 
       </div>
 
-      <div className = "item startDateDiv"> 
-        <div className = "contentDiv" > 
+      <div className = "itemMyGoals startDateDiv"> 
+        <div className = "contentDiv-mygoals" > 
           <div 
-            className = "internalContentDiv"
+            className = "internalcontentDiv-mygoals"
             style = {{color:this.state.textColor}}> 
             <br></br> {this.state.startDate} 
           </div> 
         </div>
       </div>
 
-      <div className = "item endDateDiv"> 
-        <div className = "contentDiv" > 
+      <div className = "itemMyGoals endDateDiv"> 
+        <div className = "contentDiv-mygoals" > 
           <div 
-            className = "internalContentDiv"
+            className = "internalcontentDiv-mygoals"
             style = {{color:this.state.textColor}}>  
             <br></br> {this.state.endDate} 
           </div> 
         </div> 
       </div>
     
-      <div className = "item progressDiv"> 
-        <div className = "contentDiv" > 
+      <div className = "itemMyGoals progressDiv"> 
+        <div className = "contentDiv-mygoals" > 
           <br></br> 
           <button 
             className = "progressBar" 
@@ -70,15 +72,13 @@ class GoalRow extends Component {
         </div> 
       </div>
       
-      <div className = "item buttonDiv"> 
-        <div className = "contentDiv lastCol" > 
-          <br></br> 
-          <button id = "addMilestoneButton" > 
+      <div className = "itemMyGoals buttonDivMyGoals"> 
+        <div className = "contentDiv-mygoals lastCol" > 
+          <button id = "addProgressButton" > 
             <Link 
-              className = "button" 
+              className = "navButton navButton-mygoals" 
               id = "addGoal" 
-              to='/selectgoal'>
-                add progress
+              to='/addprogress'>add progress
             </Link>
           </button> 
         </div> 

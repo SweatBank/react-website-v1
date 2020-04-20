@@ -9,6 +9,7 @@ import MyGoals from './pages/my_goals.jsx';
 import RecordCommitmentGoal from './pages/record_commitment_goal.jsx';
 import SelectPerformanceGoal from './pages/select_performance_goal.jsx';
 import HowItWorks from './pages/how_it_works.jsx';
+import AboutUs from './pages/about_us.jsx';
 import AddProgress from './pages/add_progress.jsx';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -35,6 +36,7 @@ function App() {
           <Route exact path = "/mygoals" component = {MyGoals} />
           <Route exact path = "/addprogress" component = {AddProgress} />
           <Route exact path = "/howitworks" component = {HowItWorks} />
+          <Route exact path = "/aboutus" component = {AboutUs} />
         </Switch>
     </Router>
   );

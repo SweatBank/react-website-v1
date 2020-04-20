@@ -8,27 +8,27 @@ class SetGoalButton extends Component {
     constructor(props) {
         super(props);
         this.state = {
-        buttonClasses: 'disallowed goToGoal',
+        buttonClasses: 'disallowed navButton',
         route: '/'
         };
     }
 
     componentDidUpdate(prevProps) {
         if(this.props.selectedGoalType !== prevProps.selectedGoalType){
-            if(this.props.selectedGoalType === "tempo"){
-                this.setState({buttonClasses:'allowed goToGoal'})
+            if(this.props.selectedGoalType === "tempo" ){
+                this.setState({buttonClasses:'allowed navButton'})
                 this.setState({route: '/recordtempogoal'})
             }
-            if(this.props.selectedGoalType === "bodyweight"){
-                this.setState({buttonClasses:'allowed goToGoal'})
+            if(this.props.selectedGoalType === "bodyweight" ){
+                this.setState({buttonClasses:'allowed navButton'})
                 this.setState({route: '/recordbodyweightgoal'})
             }
-            if(this.props.selectedGoalType === "weightlifting"){
-                this.setState({buttonClasses:'allowed goToGoal'})
+            if(this.props.selectedGoalType === "weightlifting" ){
+                this.setState({buttonClasses:'allowed navButton'})
                 this.setState({route: '/recordliftgoal'})
             }
             if(this.props.selectedGoalType === "none"){
-                this.setState({buttonClasses:'disallowed goToGoal'})
+                this.setState({buttonClasses:'disallowed navButton'})
             }
         }                   
     } 
@@ -37,7 +37,10 @@ class SetGoalButton extends Component {
         return (   
             <Fragment>
                 <div className = "item emptyDiv"/>
-                    <div className = "item buttonDiv firstCol"> <Link className = {this.state.buttonClasses} id = "nextButton" to = {this.state.route}> set goal & timeframe </Link> </div>
+                    <div className = "item buttonDiv-performance"> 
+                        <Link className = {this.state.buttonClasses} to = {this.state.route}> 
+                            set goal & timeframe 
+                        </Link> </div>
                 <div className = "item emptyDiv"/>
             </Fragment>
         );

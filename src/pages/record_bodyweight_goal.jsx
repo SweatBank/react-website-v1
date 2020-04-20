@@ -3,7 +3,7 @@ import { Fragment } from 'react';
 import bodyweightIcon from '../images/bodyweight2.svg';
 
 // STYLESHEETS
-// import '../CSS/master.css'; 
+import '../CSS/master.css'; 
 
 // BANNER
 import Banner from '../components/record-goal-components/_banner.js';
@@ -115,7 +115,9 @@ class Goal extends Component {
     return (
 
       <Fragment>
-        <Banner/>
+      <Banner/>
+      
+      <div className = "wrapperRecordGoal">  
       
       {/* GOAL DIV */}
         <div className = "item item1">
@@ -157,6 +159,7 @@ class Goal extends Component {
             validBaseline = {this.state.validBodyweightBaseline} 
             timeframe = {this.state.goalTimeframe} 
           />
+          </div>
       </Fragment>
 
     );

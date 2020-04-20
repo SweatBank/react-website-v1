@@ -73,6 +73,7 @@ class BodyweightExerciseInput extends Component {
             style = {{backgroundColor: this.state.fillColor}}
             id = "exercise" 
             type = "text" 
+            maxLength = "20"
             placeholder = {this.state.placeholder} 
           /> 
         </form> 

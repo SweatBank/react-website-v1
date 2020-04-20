@@ -85,6 +85,7 @@ class LiftGoalWeightInput extends Component {
           style = {{backgroundColor: this.state.fillColor}}
           id = "weight" 
           type = "text" 
+          maxlength = "4"
           placeholder = {this.state.placeholder} /> 
         </form> 
         {" "}

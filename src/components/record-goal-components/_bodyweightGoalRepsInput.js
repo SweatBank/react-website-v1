@@ -90,7 +90,8 @@ class BodyweightRepsInput extends Component {
             id = "reps" 
             type = "text" 
             placeholder = {this.state.placeholder} 
-            autoFocus /> 
+            maxLength = "5"
+            autoFocus = "true" /> 
         </form>
     );
     }

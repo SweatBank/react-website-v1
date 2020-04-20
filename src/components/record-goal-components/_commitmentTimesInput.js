@@ -72,6 +72,7 @@ class CommitmentTimesInput extends Component {
             className = "exerciseInput numberInput" 
             id = "reps" 
             type = "text" 
+            maxLength = "3"
             placeholder = {this.state.placeholder} /> 
         </form>
     );

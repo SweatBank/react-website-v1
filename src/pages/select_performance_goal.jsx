@@ -1,5 +1,6 @@
 // PACKAGES
 import React, { Component } from 'react';
+import { Fragment } from 'react';
 
 // ICONS
 import liftIcon from '../images/dumbbell.svg';
@@ -9,6 +10,9 @@ import profileIcon from '../images/person_head.svg';
 
 // STYLESHEETS
 import '../CSS/master.css';
+
+// BANNER
+import Banner from '../components/record-goal-components/_banner.js';
 
 import GoalDescription from '../components/_goalDescription.js'
 import SetGoalButton from '../components/_setGoalButton.js'
@@ -28,21 +32,14 @@ class SelectPerformanceGoal extends Component {
 
     render(){
         return(
-
-            <div className = "wrapper">
-
-                <div className ="item banner" id ="navBarLeft">
-                    <a className = "pagelink" href= "file:home.html"> <span id ="home"> sweatbank </span> </a> 
-                </div>
-                
-                <div className ="item banner" id ="navBarRight">
-                    <a className = "pagelink" href= "file:sweatbank_profile.html"><img src={profileIcon} id="profileIcon"/> </a>
-                </div>
+            <Fragment>
+            <Banner/>
+            <div className = "wrapper-performance">
 
                 <div className = "item emptyDiv"> </div>
 
-                <div className ="item headerDiv firstCol">
-                    <span id = "instructions"> Click to select a type of performance goal: </span>
+                <div className ="item headerDiv-performance firstCol-performance">
+                    <span id = "instructionsPerformance"> Click to select a type of performance goal: </span>
                 </div>
 
                 <div className = "item emptyDiv"> </div>
@@ -54,9 +51,9 @@ class SelectPerformanceGoal extends Component {
                 <GoalDescription goalType = "weightlifting" setSelectedGoalType = {this.setSelectedGoalType.bind(this)} icon = {liftIcon} selectedGoalType = {this.state.selectedGoalType} />
                 <SetGoalButton selectedGoalType = {this.state.selectedGoalType} />
 
-                <div className = "item bottomDiv">  </div>
-
+                <div className = "item bottomDiv-performance">  </div>
             </div>
+            </Fragment>
         );
     }
 }
