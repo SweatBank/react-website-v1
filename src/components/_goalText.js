@@ -26,11 +26,15 @@ class GoalText extends Component {
                 
                 <div className ="item contentDiv-addprogress">
                     <div className = "innerContentDiv-addprogress firstRow-addprogress">
-                        <span className = "previousInput-addprogress"> squat </span> &nbsp; &nbsp;
-                        <span className = "previousInput-addprogress"> 255 </span> &nbsp; &nbsp;
-                        <span className = "previousInput-addprogress"> lbs </span> &nbsp; &nbsp;
-                        <span className = "previousInput-addprogress"> 5 </span> &nbsp; &nbsp;
-                        <span className = "previousInput-addprogress"> times </span>
+                        <span className = "previousInputText-addprogress"> squat </span> &nbsp;
+                        {/* this should be an "unstyled" add progress text element */}
+                        
+                        <span className = "previousInput-addprogress"> 255 </span> &nbsp; 
+                        {/* this should be a "styled" add progress text element */}
+                        
+                        <span className = "previousInputText-addprogress"> lbs </span> &nbsp; 
+                        <span className = "previousInput-addprogress"> 5 </span> &nbsp;
+                        <span className = "previousInputText-addprogress"> times </span>
                     </div>
                 </div>
 

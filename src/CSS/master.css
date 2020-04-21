@@ -102,7 +102,7 @@ svg{ height: 280px; width:auto; fill:#8A94B9;}
 .wrapper-addprogress{
     width: 100%; min-height: 100%; margin: 0 auto; display: grid; /* common properties */
     /* grid-gap: 1px; */
-    grid-template-columns: auto 200px auto auto;
+    grid-template-columns: 1fr 200px auto 1fr;
     grid-template-rows: repeat(9,auto) 250px;
 }
 
@@ -163,12 +163,18 @@ svg{ height: 280px; width:auto; fill:#8A94B9;}
 }
 
 .previousInput-addprogress{
-    padding-left: 12px; padding-right: 10px;
+    padding-left: 10px; padding-right: 10px;
     padding-top: 7px; padding-bottom: 7px;
     border-radius: 12px;
     border-top-right-radius: 6px;
     font-size: 18px;
     background: #8A94B9;
+}
+
+.previousInputText-addprogress{
+    /* padding-left: 12px; padding-right: 10px; */
+    padding-top: 7px; padding-bottom: 7px;
+    font-size: 19px;
 }
 
 .navButton-addprogress{ font-size: 16px; }

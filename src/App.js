@@ -28,13 +28,15 @@ function App() {
           <Route exact path = "/" component = {Home} /> 
           <Route exact path = "/selectgoal" component = {SelectGoal} /> 
           <Route exact path = "/performancegoal" component = {SelectPerformanceGoal} />
-          {/* add a render property after component property? */}
           <Route exact path = "/recordliftgoal" component = {RecordLiftGoal} />
           <Route exact path = "/recordbodyweightgoal" component = {RecordBodyweightGoal} />
           <Route exact path = "/recordtempogoal" component = {RecordTempoGoal} />
           <Route exact path = "/recordcommitmentgoal" component = {RecordCommitmentGoal} />
           <Route exact path = "/mygoals" component = {MyGoals} />
+          
           <Route exact path = "/addprogress" component = {AddProgress} />
+          {/* how can the AddProgress component receive props? */}
+
           <Route exact path = "/howitworks" component = {HowItWorks} />
           <Route exact path = "/aboutus" component = {AboutUs} />
         </Switch>

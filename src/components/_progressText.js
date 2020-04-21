@@ -7,46 +7,68 @@ class ProgressText extends Component {
 
     constructor(props) {
         super(props);
-        this.setPlaceholderText = this.setPlaceholderText.bind(this);
-        this.handleChange = this.handleChange.bind(this);
-        this.startSizeInput = this.startSizeInput.bind(this);
+        this.setPlaceholderTextWeight = this.setPlaceholderTextWeight.bind(this);
+        this.startSizeInputWeight = this.startSizeInputWeight.bind(this);
+        this.handleWeightChange = this.handleWeightChange.bind(this);
+        this.setPlaceholderTextReps = this.setPlaceholderTextReps.bind(this);
+        this.startSizeInputReps = this.startSizeInputReps.bind(this);
+        this.handleRepsChange = this.handleRepsChange.bind(this);
         this.state = { 
-            placeholder:'',
-            size: '',
-            fillColor: ''
+            placeholderWeight:'',
+            sizeWeight: '',
+            fillColorWeight: '',
+            
+            placeholderReps:'',
+            sizeReps: '',
+            fillColorReps: ''
         };
     }
 
     componentDidMount() { 
-        window.addEventListener('load', this.setPlaceholderText); 
-        window.addEventListener('load', this.startSizeInput);
+        window.addEventListener('load', this.setPlaceholderTextWeight); 
+        window.addEventListener('load', this.startSizeInputWeight);
+        window.addEventListener('load', this.setPlaceholderTextReps);
+        window.addEventListener('load', this.startSizeInputReps);
       }
       
       componentWillUnmount() {  
-        window.removeEventListener('load', this.setPlaceholderText);
-        window.removeEventListener('load', this.startSizeInput);
+        window.removeEventListener('load', this.setPlaceholderTextWeight);
+        window.removeEventListener('load', this.startSizeInputWeight);
+        window.removeEventListener('load', this.setPlaceholderTextReps);
+        window.removeEventListener('load', this.startSizeInputReps);
       }
     
-      startSizeInput(){
+      setPlaceholderTextWeight(){ this.setState({placeholderWeight: "205"}) }
+      setPlaceholderTextReps(){ this.setState({placeholderReps: "5"}) }
+
+      startSizeInputWeight(){
         var placeholderLength = document.getElementById("thisMilestoneWeight").placeholder.length
-        this.setState({size: placeholderLength + 2}) 
+        this.setState({sizeWeight: placeholderLength + 2}) 
       }
-    
-      setPlaceholderText(){ this.setState({placeholder: "205"}) }
+
+      startSizeInputReps(){
+        var placeholderLength = document.getElementById("thisMilestoneReps").placeholder.length
+        this.setState({sizeReps: placeholderLength + 2}) 
+      }
       
-      handleChange(e){
+      handleWeightChange(e){
         e.preventDefault()
-        
         var placeholderLength = document.getElementById("thisMilestoneWeight").placeholder.length
-    
-        if ( e.target.value.length > 0 ){ this.setState( {size: e.target.value.length + 2} ) } // resizing
-        else { this.setState({size: placeholderLength + 2}) }
-        
-        if ( e.target.value.length > 0 ){ this.setState({fillColor: '#8A94B9'}) }  // valid input check
-        else { this.setState({fillColor: '#C6C0CA'}) }
-    
+        if ( e.target.value.length > 0 ){ this.setState( {sizeWeight: e.target.value.length + 2} ) } // resizing
+        else { this.setState({sizeWeight: placeholderLength + 2}) }
+        if ( e.target.value.length > 0 ){ this.setState({fillColorWeight: '#8A94B9'}) }  // valid input check
+        else { this.setState({fillColorWeight: '#C6C0CA'}) }
         // this.props.setLiftExercise(e.target.value) 
-    
+      }
+      
+      handleRepsChange(e){
+        e.preventDefault()
+        var placeholderLength = document.getElementById("thisMilestoneReps").placeholder.length
+        if ( e.target.value.length > 0 ){ this.setState( {sizeReps: e.target.value.length + 2} ) } // resizing
+        else { this.setState({sizeReps: placeholderLength + 2}) }
+        if ( e.target.value.length > 0 ){ this.setState({fillColorReps: '#8A94B9'}) }  // valid input check
+        else { this.setState({fillColorReps: '#C6C0CA'}) }
+        // this.props.setLiftExercise(e.target.value) 
       }
 
     render() {
@@ -63,26 +85,35 @@ class ProgressText extends Component {
 
                 <div className ="item contentDiv-addprogress">
                     <div className = "innerContentDiv-addprogress">
-                        <span className = "previousInput-addprogress thisMilestone"> squat </span> &nbsp; &nbsp;
+                    <span className = "previousInputText-addprogress"> squat </span> &nbsp;
                         
                         <form className = "userInput">
                             <input 
-                                onChange = {this.handleChange.bind(this)} 
-                                size = {this.state.size} 
-                                style = {{backgroundColor: this.state.fillColor}}
+                                onChange = {this.handleWeightChange.bind(this)} 
+                                size = {this.state.sizeWeight} 
+                                style = {{backgroundColor: this.state.fillColorWeight}}
                                 className ="exerciseInput-addprogress" 
                                 id = "thisMilestoneWeight" 
                                 type ="text" 
-                                placeholder = {this.state.placeholder} 
+                                placeholder = {this.state.placeholderWeight} 
                                 autofocus = "true" />
-                        </form> &nbsp; &nbsp;
+                        </form> &nbsp; 
                         
-                        <span className = "previousInput-addprogress thisMilestone units"> lbs </span> &nbsp; &nbsp;
+                        <span className = "previousInputText-addprogress"> lbs </span> &nbsp;
+
+                        <form className = "userInput">
+                            <input 
+                                onChange = {this.handleRepsChange.bind(this)} 
+                                size = {this.state.sizeReps} 
+                                style = {{backgroundColor: this.state.fillColorReps}}
+                                className ="exerciseInput-addprogress" 
+                                id = "thisMilestoneReps" 
+                                type ="text" 
+                                placeholder = {this.state.placeholderReps} 
+                                />
+                        </form> &nbsp; 
                         
-                        {/* this needs to become a valid input too! */}
-                        <span className = "previousInput-addprogress thisMilestone reps"> 5 </span> &nbsp; &nbsp;
-                        
-                        <span className = "previousInput-addprogress"> times </span>
+                        <span className = "previousInputText-addprogress"> times </span> &nbsp;
                     </div>
                 </div>
                 

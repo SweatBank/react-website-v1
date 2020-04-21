@@ -26,11 +26,11 @@ class BaselineText extends Component {
                 
                 <div className ="item contentDiv-addprogress baselineDiv-addprogress">
                     <div className = "innerContentDiv-addprogress">
-                        <span className = "previousInput-addprogress"> squat </span> &nbsp; &nbsp;
-                        <span className = "previousInput-addprogress"> 175 </span> &nbsp; &nbsp;
-                        <span className = "previousInput-addprogress"> lbs </span> &nbsp; &nbsp;
-                        <span className = "previousInput-addprogress"> 5 </span> &nbsp; &nbsp;
-                        <span className = "previousInput-addprogress"> times  </span>
+                    <span className = "previousInputText-addprogress"> squat </span> &nbsp;
+                        <span className = "previousInput-addprogress"> 175 </span> &nbsp; 
+                        <span className = "previousInputText-addprogress"> lbs </span> &nbsp; 
+                        <span className = "previousInput-addprogress"> 5 </span> &nbsp;
+                        <span className = "previousInputText-addprogress"> times </span>
                     </div>
                 </div>
 
